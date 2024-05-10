@@ -1,0 +1,42 @@
+//score of a string//
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+    score = 0
+    len1 = len(str)
+ 
+    # Traverse through string character
+    i = 0
+    while(i < len1):
+         
+        # Initialize current chunk's size
+        chunkSize = 1
+ 
+        # Get current character
+        currentChar = str[i]
+        i += 1
+ 
+        # Calculate total chunk size
+        # of same characters
+        while (i < len1 and str[i] == currentChar):
+            chunkSize += 1
+            i += 1
+ 
+        # Add/subtract pow(chunkSize, 2)
+        # depending upon character
+        if (currentChar == '1'):
+            score += pow(chunkSize, 2)
+        else:
+            score -= pow(chunkSize, 2)
+ 
+    # Return the score
+    return score
+ 
+# Driver code
+if __name__ == '__main__':
+    str = "11011"
+    print(calcScore(str)) 
+    //concatenation of array//
+    class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        return nums+nums
+        
